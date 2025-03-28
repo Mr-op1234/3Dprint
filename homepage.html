@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Printing Hub - Premium 3D Printing Services</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="js/upload.js" defer></script>
+</head>
+<body>
+    <div class="page-transition"></div>
+    
+    <header>
+        <div class="logo">
+            <a href="#home" class="logo-link">
+                <span class="logo-text">3D<span class="accent">Print</span>Hub</span>
+            </a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1 class="animate-text">Next Generation <span class="accent">3D Printing</span> Solutions</h1>
+                <p class="animate-text-delay">Transform your ideas into reality with our premium 3D printing services</p>
+                <div class="cta-buttons animate-text-delay-2">
+                    <a href="#services" class="btn primary">Our Services</a>
+                    <a href="#contact" class="btn secondary">Get a Quote</a>
+                </div>
+            </div>
+            <div class="hero-3d-model">
+                <!-- 3D model will be rendered here with Three.js -->
+                <div id="model-container"></div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="services">
+            <div class="section-header">
+                <h2><span class="accent">Our<span> Services</h2>
+                <p>Comprehensive 3D printing solutions for all your needs</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-cube"></i>
+                    </div>
+                    <h3>Prototyping</h3>
+                    <p>Rapid prototyping services to bring your concepts to life quickly and efficiently.</p>
+                    <a href="#" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3>Custom Parts</h3>
+                    <p>Precision manufacturing of custom parts for various applications and industries.</p>
+                    <a href="#" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <h3>Finishing Services</h3>
+                    <p>Professional finishing touches including painting, smoothing, and assembly.</p>
+                    <a href="#" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-drafting-compass"></i>
+                    </div>
+                    <h3>3D Design</h3>
+                    <p>Expert 3D modeling and design services to help realize your vision.</p>
+                    <a href="#" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- File Upload Section -->
+        <section id="upload" class="upload-section">
+            <div class="section-header">
+                <h2>Upload Your <span class="accent">PDF File</span></h2>
+                <p>Upload your document file and let us process it</p>
+            </div>
+            <div class="upload-container">
+                <div class="upload-box" id="upload-box">
+                    <div class="upload-area">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                        <h3>Drag & Drop your PDF file here</h3>
+                        <p>or</p>
+                        <label for="file-input" class="btn primary">Choose File</label>
+                        <input type="file" id="file-input" accept=".pdf" multiple style="display: none;">
+                        <p class="file-info">Maximum file size: 100MB</p>
+                    </div>
+                    
+                    <!-- File list will be added here by JavaScript -->
+                    <div class="file-list" style="display: none;"></div>
+                    
+                    <!-- Proceed to Pay button -->
+                    <div class="proceed-container" style="display: none;">
+                        <button id="proceed-to-pay" class="btn primary">
+                            <i class="fas fa-credit-card"></i> Proceed to Pay
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section id="gallery" class="gallery">
+            <div class="section-header">
+                <h2>Our <span class="accent">Projects</span></h2>
+                <p>Explore our latest 3D printing projects and creations</p>
+            </div>
+
+            <!-- Project Carousel -->
+            <div class="project-carousel">
+                <div class="carousel-container">
+                    <div class="carousel-track">
+                        <div class="carousel-slide current-slide">
+                            <img src="1f986c76-4aba-4eeb-b2c4-0afe2bc6ed64.jpg" alt="23:1 reducer cycloidal disk">
+                            <div class="carousel-slide-content">
+                                <h3>23:1 reducer cycloidal disk</h3>
+                                <p>Custom-designed reducer cycloidal disk with precise tolerances</p>
+                            </div>
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="36b78ca5-6cef-4eec-9f3f-09f6661ff6e3.jpg" alt="End Effector wrist joint">
+                            <div class="carousel-slide-content">
+                                <h3>End Effector wrist joint</h3>
+                                <p>Custom-designed wrist joint for a 3D-printed end effector</p>
+                            </div>
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="61a1890b-7e97-4af2-9216-003978988b4d.jpg" alt="5DOF Robotic Arm">
+                            <div class="carousel-slide-content">
+                                <h3>5DOF Robotic Arm</h3>
+                                <p>Custom-designed 5DOF robotic arm with precise tolerances</p>
+                            </div>
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="de9e6a53-aaf8-4706-9f5e-5cc3d5ece26b.jpg" alt="In-built suspension wheel">
+                            <div class="carousel-slide-content">
+                                <h3>In-Built Suspension wheel</h3>
+                                <p>High-strength industrial part designed for heavy machinery with precise tolerances</p>
+                            </div>
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="fcbf3d78-73b0-475c-a469-d0fc273dd168.jpg" alt="Reagent Stand">
+                            <div class="carousel-slide-content">
+                                <h3>Reagent Stand (Science Subsystem module)</h3>
+                                <p>Complex geometric sculpture with intricate details showcasing artistic possibilities</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-button carousel-button-prev is-hidden">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="carousel-button carousel-button-next">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+                <div class="carousel-nav">
+                    <button class="carousel-indicator current-slide"></button>
+                    <button class="carousel-indicator"></button>
+                    <button class="carousel-indicator"></button>
+                    <button class="carousel-indicator"></button>
+                    <button class="carousel-indicator"></button>
+                </div>
+            </div>
+
+            <div class="gallery-grid">
+                <div class="gallery-item" data-category="prototypes">
+                    <div class="gallery-image">
+                        <img src="images/gallery/prototype-1.jpg" alt="Prototype 1">
+                        <div class="overlay">
+                            <div class="overlay-content">
+                                <h3>Product Prototype</h3>
+                                <p>Consumer electronics prototype with functional parts</p>
+                                <a href="#" class="view-project">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- More gallery items would be added here -->
+            </div>
+            <div class="gallery-load-more">
+                <button class="btn secondary">Load More Projects</button>
+            </div>
+        </section>
+
+        <!-- Pricing Section -->
+        <section id="pricing" class="pricing">
+            <div class="section-header">
+                <h2>Our <span class="accent">Pricing</span></h2>
+                <p>Transparent and competitive pricing for all your 3D printing needs</p>
+            </div>
+            <div class="pricing-tabs">
+                <button class="pricing-tab active" data-tab="material">By Material</button>
+                <button class="pricing-tab" data-tab="size">By Size</button>
+                <button class="pricing-tab" data-tab="service">By Service</button>
+            </div>
+            <div class="pricing-content active" id="material-pricing">
+                <div class="pricing-cards">
+                    <div class="pricing-card">
+                        <div class="pricing-header">
+                            <h3>PLA</h3>
+                            <p class="price">$5<span>/cubic inch</span></p>
+                        </div>
+                        <div class="pricing-features">
+                            <ul>
+                                <li>Biodegradable</li>
+                                <li>Good for prototypes</li>
+                                <li>Various colors</li>
+                                <li>Medium strength</li>
+                                <li>Fast printing</li>
+                            </ul>
+                        </div>
+                        <a href="#contact" class="btn primary">Get Quote</a>
+                    </div>
+                    <!-- More pricing cards would be added here -->
+                </div>
+            </div>
+            <!-- Other pricing tabs content would be added here -->
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about">
+            <div class="section-header">
+                <h2>About <span class="accent">Us</span></h2>
+                <p>Learn more about our 3D printing journey and expertise</p>
+            </div>
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="3DPRinter.jpeg" alt="Our 3D Printing Workshop">
+                </div>
+                <div class="about-text">
+                    <h3>Pioneering 3D Printing Excellence</h3>
+                    <p>Founded in 2015, 3DPrintHub has been at the forefront of additive manufacturing technology. Our team of experts combines years of experience with cutting-edge equipment to deliver exceptional 3D printing solutions.</p>
+                    <p>We believe in pushing the boundaries of what's possible with 3D printing, constantly innovating and refining our processes to achieve the best results for our clients.</p>
+                    <div class="about-stats">
+                        <div class="stat">
+                            <span class="stat-number">500+</span>
+                            <span class="stat-label">Projects Completed</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">50+</span>
+                            <span class="stat-label">Regular Clients</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">12</span>
+                            <span class="stat-label">Expert Team Members</span>
+                        </div>
+                    </div>
+                    <a href="team.html" class="btn secondary">Meet Our Team</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact">
+            <div class="section-header">
+                <h2>Get In <span class="accent">Touch</span></h2>
+                <p>Reach out to us for quotes, questions, or custom projects</p>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h3>Our Location</h3>
+                            <p>IEDC Lab, Godrej Genesis Building 6th floor, Salt Lake Sector- V, Kolkata</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone-alt"></i>
+                        <div>
+                            <h3>Call Us</h3>
+                            <p>+1 (555) 123-4567</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h3>Email Us</h3>
+                            <p>info@3dprinthub.com</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h3>Working Hours</h3>
+                            <p>Mon-Fri: 9AM - 6PM</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="subject" name="subject" placeholder="Subject">
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <span class="logo-text">3D<span class="accent">Print</span>Hub</span>
+                <p>Premium 3D Printing Services</p>
+            </div>
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#pricing">Pricing</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="#">Prototyping</a></li>
+                        <li><a href="#">Custom Parts</a></li>
+                        <li><a href="#">Finishing Services</a></li>
+                        <li><a href="#">3D Design</a></li>
+                        <li><a href="#">Consulting</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Connect With Us</h3>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 3DPrintHub. All Rights Reserved.</p>
+            <div class="footer-bottom-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

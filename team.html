@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meet Our Team - 3D Printing Hub</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+    <div class="page-transition"></div>
+    
+    <header>
+        <div class="logo">
+            <a href="index.html#home" class="logo-link">
+                <span class="logo-text">3D<span class="accent">Print</span>Hub</span>
+            </a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="homepage.html#home">Home</a></li>
+                <li><a href="homepage.html#services">Services</a></li>
+                <li><a href="homepage.html#gallery">Gallery</a></li>
+                <li><a href="homepage.html#pricing">Pricing</a></li>
+                <li><a href="homepage.html#about">About</a></li>
+                <li><a href="team.html" class="active">Team</a></li>
+                <li><a href="homepage.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="team-hero" class="hero">
+            <div class="hero-content">
+                <h1 class="animate-text">Meet Our <span class="accent">Team</span></h1>
+                <p class="animate-text-delay">The talented professionals behind our premium 3D printing services</p>
+            </div>
+        </section>
+
+        <!-- Team Section -->
+        <section id="team" class="team">
+            <div class="section-header">
+                <h2>Our <span class="accent">Experts</span></h2>
+                <p>Meet the skilled professionals who bring your ideas to life</p>
+            </div>
+            
+            <div class="team-grid">
+                <!-- Team Member 1 -->
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="https://via.placeholder.com/400x500" alt="John Doe">
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                    <div class="member-info">
+                        <h3>John Doe</h3>
+                        <span class="position">Founder & CEO</span>
+                        <p>With over 15 years of experience in additive manufacturing, John leads our team with vision and expertise in cutting-edge 3D printing technologies.</p>
+                    </div>
+                </div>
+                
+                <!-- Team Member 2 -->
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="https://via.placeholder.com/400x500" alt="Jane Smith">
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                    <div class="member-info">
+                        <h3>Jane Smith</h3>
+                        <span class="position">Lead Designer</span>
+                        <p>Jane brings creativity and precision to every project, specializing in complex 3D modeling and design optimization for manufacturing.</p>
+                    </div>
+                </div>
+                
+                <!-- Team Member 3 -->
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="https://via.placeholder.com/400x500" alt="Michael Johnson">
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                    <div class="member-info">
+                        <h3>Michael Johnson</h3>
+                        <span class="position">Technical Director</span>
+                        <p>Michael oversees our technical operations, ensuring optimal print quality and efficiency across all our advanced 3D printing systems.</p>
+                    </div>
+                </div>
+                
+                <!-- Team Member 4 -->
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="https://via.placeholder.com/400x500" alt="Emily Chen">
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                    <div class="member-info">
+                        <h3>Emily Chen</h3>
+                        <span class="position">Materials Specialist</span>
+                        <p>Emily's expertise in materials science helps us select the perfect materials for each project, balancing performance, durability, and cost.</p>
+                    </div>
+                </div>
+                
+                <!-- Team Member 5 -->
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="https://via.placeholder.com/400x500" alt="Robert Wilson">
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                    <div class="member-info">
+                        <h3>Robert Wilson</h3>
+                        <span class="position">Finishing Specialist</span>
+                        <p>Robert's attention to detail ensures that every printed piece receives the perfect finishing touches, from sanding to painting and assembly.</p>
+                    </div>
+                </div>
+                
+                <!-- Team Member 6 -->
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="https://via.placeholder.com/400x500" alt="Sarah Martinez">
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                    <div class="member-info">
+                        <h3>Sarah Martinez</h3>
+                        <span class="position">Client Relations Manager</span>
+                        <p>Sarah works closely with our clients to understand their needs and ensure their projects are delivered to the highest standards of satisfaction.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Leadership Section -->
+        <section id="leadership" class="leadership">
+            <div class="section-header">
+                <h2>Our <span class="accent">Leadership</span></h2>
+                <p>The visionaries guiding our company's direction and growth</p>
+            </div>
+            
+            <div class="leadership-carousel">
+                <div class="carousel-container">
+                    <div class="carousel-track">
+                        <div class="carousel-slide current-slide">
+                            <img src="https://via.placeholder.com/800x500" alt="Leadership Team">
+                            <div class="carousel-slide-content">
+                                <h3>Our Founding Vision</h3>
+                                <p>Learn about how our leadership team established 3DPrintHub with a mission to democratize access to high-quality 3D printing services.</p>
+                            </div>
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="https://via.placeholder.com/800x500" alt="Company Growth">
+                            <div class="carousel-slide-content">
+                                <h3>Growth & Innovation</h3>
+                                <p>Discover how our leadership has guided the company through years of innovation and expansion in the 3D printing industry.</p>
+                            </div>
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="https://via.placeholder.com/800x500" alt="Future Vision">
+                            <div class="carousel-slide-content">
+                                <h3>Future Direction</h3>
+                                <p>Explore our leadership's vision for the future of 3DPrintHub and the evolving landscape of additive manufacturing.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-button carousel-button-prev is-hidden">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="carousel-button carousel-button-next">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+                <div class="carousel-nav">
+                    <button class="carousel-indicator current-slide"></button>
+                    <button class="carousel-indicator"></button>
+                    <button class="carousel-indicator"></button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Join Our Team Section -->
+        <section id="join-team" class="join-team">
+            <div class="section-header">
+                <h2>Join Our <span class="accent">Team</span></h2>
+                <p>Explore career opportunities at 3DPrintHub</p>
+            </div>
+            
+            <div class="join-team-content">
+                <div class="join-team-text">
+                    <h3>Grow With Us</h3>
+                    <p>At 3DPrintHub, we're always looking for talented individuals who are passionate about 3D printing and innovation. Join our team of experts and help shape the future of additive manufacturing.</p>
+                    <p>We offer a collaborative work environment, competitive benefits, and opportunities for professional growth and development.</p>
+                    <div class="cta-buttons">
+                        <a href="#" class="btn primary">View Open Positions</a>
+                        <a href="index.html#contact" class="btn secondary">Contact Us</a>
+                    </div>
+                </div>
+                <div class="join-team-image">
+                    <img src="https://via.placeholder.com/600x400" alt="Team Collaboration">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <span class="logo-text">3D<span class="accent">Print</span>Hub</span>
+                <p>Premium 3D Printing Services</p>
+            </div>
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="homepage.html#home">Home</a></li>
+                        <li><a href="homepage.html#services">Services</a></li>
+                        <li><a href="homepage.html#gallery">Gallery</a></li>
+                        <li><a href="homepage.html#pricing">Pricing</a></li>
+                        <li><a href="homepage.html#about">About</a></li>
+                        <li><a href="team.html">Team</a></li>
+                        <li><a href="homepage.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="#">Prototyping</a></li>
+                        <li><a href="#">Custom Parts</a></li>
+                        <li><a href="#">Finishing Services</a></li>
+                        <li><a href="#">3D Design</a></li>
+                        <li><a href="#">Consulting</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Connect With Us</h3>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 3DPrintHub. All Rights Reserved.</p>
+            <div class="footer-bottom-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
